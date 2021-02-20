@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<title>CC Buisiness Enterprises, Ltd.</title>
+</head>
+
+<body>
+<form method="POST" action="../php/newcustConnect.php">
+	
+	<div class="FlexBody">
+		<div class="AppContent">
+			<span class="Flock">ESU Join the Flock!</span>
+			<span class="Tagline">Social Entrepreneurial Campaign</span>
+			<div class="ImageBox">
+				<img src="../images/esulogo.png" alt="ESU Logo" id="LogoSplash">
+				<img src="../images/birds.png" alt="" id="Birds">
+			</div>
+			<div class="Field">
+				<p class="InputLabel">Name</p>
+				<div class="FieldHolder" id="namefields">
+					<div class="Text">
+						<input type="text" name="fname" required>
+						<p>First</p>
+					</div>
+					<div class="Text">
+						<input type="text" name="lname" required>
+						<p>Last</p>
+					</div>
+				</div>
+			</div>
+			<div class="Field">
+				<p class="InputLabel">Credit Card Info</p>
+				<div class="FieldHolder" id="ccfields">
+					<div class="Text">
+						<input type="text" name="cc" required>
+						<p>CC Number</p>
+					</div>
+					<div class="Text">
+						<input type="text" name="csv" required>
+						<p>CVS</p>
+					</div>
+				</div>
+			</div>
+			<div class="Field">
+				<p class="InputLabel">Email</p>
+				<div class="FieldHolder">
+					<div class="Text">
+						<input type="text" name="emailtext" required>
+					</div>
+				</div>
+			</div>
+			<div class="Field">
+				<p class="InputLabel">Password</p>
+				<div class="FieldHolder">
+					<div class="Text">
+						<input type="password" name="password" required>
+					</div>
+				</div>
+			</div>
+			<div class="Field">
+				<p class="InputLabel">Phone Number (Optional)</p>
+				<div class="FieldHolder" id="phonefields">
+					<div class="Text">
+						<input type="text" class="octet" name= "area">
+						<p>###</p>
+					</div>
+					<div>-</div>
+					<div class="Text">
+						<input type="text" class="octet" name = "fpart">
+						<p>###</p>
+					</div>
+					<div>-</div>
+					<div class="Text">
+						<input type="text" class="octet" name = "epart">
+						<p>####</p>
+					</div>
+					
+				</div>
+				
+			</div>
+			<div class="Field">
+				<input type="submit" value="Submit">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

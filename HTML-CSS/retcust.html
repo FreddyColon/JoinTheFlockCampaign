@@ -1,0 +1,243 @@
+<!doctype html>
+
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<title>CC Buisiness Enterprises, Ltd.</title>
+<style>
+.button {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {padding: 10px 24px;}
+
+</style>
+</head>
+
+<body>
+<form method="post" action="../php/returnCust.php" >
+	<div class="FlexBody">
+		<div class="AppContent">
+			<span class="Flock">ESU Join the Flock!</span>
+			<span class="Tagline">Social Entrepreneurial Campaign</span>
+			<a href="../php/logout.php" class="button button1">Logout</a>
+			<div class="ImageBox">
+				<img src="../images/esulogo.png" alt="ESU Logo" id="LogoSplash">
+				<img src="../images/birds.png" alt="" id="Birds">
+			</div>
+			<div class="Field">
+				<div>Choose what you would like, a matching pair(s) will be donated to the charity of your choice. Please make checks payable to ESU and write Sock Donation in the check memo (Socks available starting Nov 18th)</div>
+			</div>
+			<div class="Field">
+				<p class="InputLabel">Socks</p>
+				<div class="choiceqtstuff">
+					<form class="idkanymore">
+						<div>
+
+							<input type="checkbox" name="socks" value="sock1">
+							<label for="sock1">ESU Colors - Medium - Men (6-8) Women (6-9) Donation $20 </label>
+              <?php
+                session_start();
+
+                try{
+                  $sqlconnection = new pdo('mysql:host=localhost;dbname=esudatabase;charset=utf8','root','admin');
+
+                }
+                catch (PDOException $pe){
+                  echo 'Cannot connect to database';
+                  die;
+                }
+
+                <form method ="POST" action = "">
+                <label>Items:</label>
+                <select>
+
+                  $commandstring = "SELECT item_id,description FROM items order by item_id";
+                  $cmd = $sqlconnection->prepare($commandstring);
+                  $cmd->execute();
+                  $result = $cmd->fetchALL(PDO::FETCH_ASSOC);
+                  foreach($result as $row){
+                  echo '<option value="'.$row['item_id'].'">'.$row['description'].'</option>';
+              }
+
+              </select>
+              ?>
+							<label for="sock1qt" class="qtspace">Qt</label>
+							<select	class="qttf">
+
+								<option value="select">-</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+							<label for="sock1ch" class="qtspace">Charity</label>
+							<input type="text" name="sock1ch" class="chtf">
+						</div>
+						<div>
+							<input type="checkbox" name="socks" value="sock2">
+							<!--<label for="sock2">ESU Colors - Large - Men (9-13) Donation $20</label>-->
+							<label for="sock2qt" class="qtspace" style="margin-left:135px;">Qt</label>
+							<select	class="qttf">
+								<option value="select">-</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+							<label for="sock2ch" class="qtspace">Charity</label>
+							<input type="text" name="sock2ch" class="chtf">
+						</div>
+						<div>
+							<input type="checkbox" name="socks" value="sock3">
+							<label for="sock3">Neon Colors - Medium - Men (6-8) Women (6-9) Donation $20</label>
+							<label for="sock3qt" class="qtspace">Qt</label>
+							<select	class="qttf">
+								<option value="select">-</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+							<label for="sock3ch" class="qtspace">Charity</label>
+							<input type="text" name="sock3ch" class="chtf">
+						</div>
+						<div>
+							<input type="checkbox" name="socks" value="sock4">
+							<label for="sock4">Neon Colors - Large - Men (9-13) Donation $20</label>
+							<label for="sock4qt" class="qtspace" style="margin-left:135px;">Qt</label>
+							<select	class="qttf">
+								<option value="select">-</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+							<label for="sock4ch" class="qtspace">Charity</label>
+							<input type="text" name="sock4ch" class="chtf">
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="Field">
+				<p class="InputLabel">Hats</p>
+				<div class="choiceqtstuff">
+					<form class="idkanymore">
+						<div>
+							<input type="checkbox" name="hats" value="char1">
+							<label for="char1">ESU Colors - Donation $20</label>
+							<label for="char1qt" class="qtspace">Qt</label>
+							<select	class="qttf">
+								<option value="select">-</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+							<label for="char1ch" class="qtspace">Charity</label>
+							<input type="text" name="char1ch" class="chtf">
+						</div>
+						<div>
+							<input type="checkbox" name="hats" value="char2">
+							<label for="char2">Neon Colors - Donation $20</label>
+							<label for="char2qt" class="qtspace">Qt</label>
+							<select	class="qttf">
+								<option value="select">-</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+							<label for="char2ch" class="qtspace">Charity</label>
+							<input type="text" name="char2ch" class="chtf">
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="Field">
+				<p class="InputLabel">Pickup or Delivery</p>
+				<div class="choiceqtstuff">
+					<form class="idkanymore">
+						<div>
+							<input type="radio" name="pickup" value="char1">
+							<label for="pickup">I want to pickup my socks. Socks are available for pickup from the C.R.E.A.T.E. Lab (Stroud Hall, Room 107) Tuesdays &amp; Wednesdays 1-4pm</label>
+						</div>
+						<div>
+							<input type="radio" name="pickup" value="char2">
+							<label for="pickup">I want my socks delivered. Delivery available on campus only. Delivery day Tuesdays between 1-4pm</label>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="Field">
+				<p class="InputLabel">Deliver My Socks To (Optional)</p>
+				<div class="FieldHolder" id="delivfields">
+					<div class="Text">
+						<input type="text" id="buildname">
+						<p>Building Name</p>
+					</div>
+					<div class="Text">
+						<input type="text" id="roomnum">
+						<p>Room #</p>
+					</div>
+				</div>
+
+			</div>
+			<hr>
+			<div class="foot">
+				<p class="InputLabel" style="font-size: 1.2em;">For large orders</p>
+				<p class="create" style="font-size: .9em;">Please contact the C.R.E.A.T.E. Lab at esu.createlab@gmail.com</p>
+			</div>
+			<div class="Field">
+				<input type="button" class="newcust" name="newcust" value="Submit">
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
